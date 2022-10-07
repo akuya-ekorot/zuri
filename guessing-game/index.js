@@ -8,6 +8,7 @@ let rl = readline.createInterface({
 
 let end = 2; //initial end of guessing range of 2
 let range = createRange(1, end); //store the range of numbers in an array called range
+let points = 0; //set initial player points to 0
 
 console.log(
   `Welcome to the guessing game 🤔.
@@ -43,17 +44,18 @@ export default function checkGuess(range, name) {
     (answer) => {
       answer = parseInt(answer); // parse the string input to an number
       if (answer == random) {
+        points += 1; //update player's points.
         console.log(
-          `You guessed right! 🥳
+          `You guessed right! 🥳 Your score stands at ${points}.
 Let's do that again. The guessing range just increased by 1`);
-        end += 1 // update end
+        end += 1; // update end
         range = createRange(1, end); // update range
         checkGuess(range, name);
       } else if (answer != 0 && answer <= end) {
         console.log("So close! The guess wasn't right 😞. Try again?");
         checkGuess(range, name);
       } else if (answer == 0) {
-        console.log(`Thanks for playing ${name} 😃`);
+        console.log(`Thanks for playing ${name}. You final score is ${points} points. 😃`);
         process.exit(0);
       } else {
         console.log(`⛔ Whoa! Guess too big!!`);
