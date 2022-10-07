@@ -1,5 +1,5 @@
 ./guessing-game/.config/
-./guessing-game/node_modules
+./guessing-game/node_modules/
 .replit
 replit.nix
 .upm/
