@@ -1,0 +1,3 @@
+[submodule "zuri-portfolio"]
+	path = zuri-portfolio
+	url = https://github.com/akuya-ekorot/zuri-portfolio.git
